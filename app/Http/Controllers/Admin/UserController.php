@@ -129,7 +129,7 @@ class UserController extends Controller
         
         ));
     }
-
+    //change photo of tutors
     public function changePhotoTutor(){
         $auth = Auth::user();
         request()->validate([
@@ -143,4 +143,5 @@ class UserController extends Controller
         $auth -> save();
         return back();
     }
+
 }

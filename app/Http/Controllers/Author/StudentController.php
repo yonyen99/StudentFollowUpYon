@@ -84,12 +84,7 @@ class StudentController extends Controller
     {
         //
     }
-     // view details of students
-     public function details($id)
-     {  
-         $student = Student::find($id);
-         return view('author.student.viewdetail', compact('student'));
-     }
+    
     
       //function view follow up list
       public function viewFollowUpList(){
@@ -124,7 +119,7 @@ class StudentController extends Controller
         $students = Student::where('status',2)->get();
         return view('author.archiveList')
         ->with(array('students'=> $students,
-        // 'countStudents'=>$countStudents,
+    
         'totalStudents' => $totalStudents,
             'totalUsers' =>$totalUsers,
             'MaleOfStudents' =>$MaleOfStudents,
@@ -144,7 +139,6 @@ class StudentController extends Controller
         $totalUsers = User::all()->count();
         $totalUsers = User::all()->count();
         $students = Student::all()->where('user_id', Auth::user()->id);
-        // $students = Student::all()->where('status', 1);
         $countStudents = Student::all()->where('user_id', Auth::user()->id)->count();
         return view('author.oneTutorCanControllerStudents')
         ->with(array('students'=>$students,
@@ -174,7 +168,6 @@ class StudentController extends Controller
         
         return view('author.viewSpecificthatTutorsComment')
         ->with(array('comments'=> $comments,
-        // 'countStudents'=>$countStudents,
         'totalStudents' => $totalStudents,
             'totalUsers' =>$totalUsers,
             'MaleOfStudents' =>$MaleOfStudents,
@@ -193,10 +186,6 @@ public function mentorStudentsSpecificOfTutors($id){
     $followUpList = Student::where('status',1)->count();
         $archiveList = Student::where('status',2)->count();
     $totalUsers = User::all()->count();
-    
-    // $students = Student::all()->where('user_id', Auth::user()->id);
-    // $countStudents = Student::all()->where('user_id', Auth::user()->id)->count();
-    // $students = Student::find($id);
     $users = User::find($id);
     $students= $users->students;
     $countStudents= $users->students->count();

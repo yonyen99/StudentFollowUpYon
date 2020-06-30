@@ -224,7 +224,7 @@
                {{-- <a href="{{route('admin.student.create')}}"><span class="count_bottom"><i class="purple"><i class="fa fa-sort-asc"></i><strong>Add more</strong></i></span></a> --}}
                
 
-               <a class="text-primary" tabindex="-1" type="button" data-toggle="modal" data-backdrop="false" aria-hidden="true" data-target="#addStudent" href="#" href=""><i class="material-icons info">add</i></a>
+               <a class="text-primary" tabindex="-1" type="button" data-toggle="modal" data-backdrop="false" aria-hidden="true" data-target="#addStudent" href="#" href=""><i class="material-icons info">add</i> add more</a>
                
                                   <div class="modal fade modal-open" id="addStudent" aria-labelledby="exampleModalLabel" aria-hidden="true">
                                       <div class="modal-dialog" role="document">
@@ -379,7 +379,7 @@
                   <li><a><span class="material-icons"> supervised_user_circle </span> Users <span class="fa fa-chevron-down"></span></a>
                     <ul class="nav child_menu">
                       <li><a href="{{route('author.user.store')}}">Show the tutors</a></li>
-                      <li><a href="{{route('author.tutorControlStudents')}}">Student mentors</a></li>
+                      <li><a href="{{route('author.tutorControlStudents')}}">Tutor control studedent</a></li>
                     </ul>
                   </li>
                 </ul>

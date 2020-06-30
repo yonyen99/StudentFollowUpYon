@@ -110,12 +110,7 @@ class CommentController extends Controller
             'archiveList'=>$archiveList
             ));
     }
-    // function to show form comment.
-    public function showForm($id)
-    {
-        $students = Student::find($id);
-        return view('admin.comment.formOfComment', compact('students')); 
-    }
+  
 // function to add comment.
 public function addComment(Request $request,$id)
 {

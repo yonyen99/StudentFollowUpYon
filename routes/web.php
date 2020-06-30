@@ -21,13 +21,9 @@ Route::group(['as'=>'admin.','prefix'=>'admin','namespace'=>'Admin','middleware'
     Route::get('/achive{id}','StudentController@achive')->name('achive');
     //resource controller comment
     Route::resource('/comment','commentController');
-    // route to show form comment
-    // Route::get('/formcommennt{id}','commentController@showForm')->name('showForm');
     // route for viewdetailcomment
     Route::get('/viewdetailcomment{id}','commentController@comment')->name('comment');
-    // viewdetail of student.
-    // Route::get('/details{id}','StudentController@details')->name('details');
-    // route to viewFollowUpList
+    //route resource controller 
     Route::get('/viewFollowUpList','StudentController@viewFollowUpList')->name('viewFollowUpList');
     // route to viewAchiveList
     Route::get('/viewAchiveList','StudentController@viewAchiveList')->name('viewAchiveList');
@@ -61,16 +57,12 @@ Route::group(['as'=>'author.','prefix'=>'author','namespace'=>'Author','middlewa
     Route::resource('student','StudentController');
     // route for viewdetailcomment
      Route::get('/viewdetailcomment{id}','commentController@comment')->name('comment');
-    // viewdetail of student.
-    Route::get('/details{id}','StudentController@details')->name('details');
       // route to viewFollowUpList
       Route::get('/viewFollowUpList','StudentController@viewFollowUpList')->name('viewFollowUpList');
       // route to viewAchiveList
       Route::get('/viewAchiveList','StudentController@viewAchiveList')->name('viewAchiveList');
      //resource controller comment
      Route::resource('/comment','commentController');
-     // route to show form comment
-     Route::get('/formcommennt{id}','commentController@showForm')->name('showForm');
      // route for viewdetailcomment
      Route::get('/viewdetailcomment{id}','commentController@comment')->name('comment');
      // route to add comment
@@ -78,12 +70,8 @@ Route::group(['as'=>'author.','prefix'=>'author','namespace'=>'Author','middlewa
     //route author control the student
     Route::get('/tutorcontrol','StudentController@tutorMentorStudents')->name('tutorControlStudents');
     Route::resource('/user','UserController');
-    // show the page add of users
-    Route::get('showPageAddTutor\{id}', 'UserController@showPageAddTutor')->name('showPageAddTutor');
-    
     //route changePhotoTutor
     Route::put('/changePhotoTutor','UserController@changePhotoTutor')->name('changePhotoTutor');
-
     //route for delete comment.
     Route::delete('/destroyComment{id}','commentController@destroyComment')->name('destroyComment');
     //route for edit comment.
