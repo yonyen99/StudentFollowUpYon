@@ -37,7 +37,7 @@
                             @if ($item->role->id == 1)
                                 Admin
                             @else
-                                <a href="">Delete</a>
+                               No permission
                             
                             @endif
                             

@@ -104,28 +104,7 @@ class UserController extends Controller
         //
     }
 
-    public function showPageAddTutor($id){
-        $user = new User();
-        $student = Student::find($id);
-        $tutors = $user::all();
-        $totalStudents = Student::all()->count();
-        $MaleOfStudents = Student::all()->where('gender','Male')->count();
-        $FemaleOfStudents = Student::all()->where('gender','Female')->count();
-        $followUpList = Student::where('status',1)->count();
-        $archiveList = Student::where('status',2)->count();
-        $totalUsers = User::all()->count();
-        return view('author.addTutorToStudent')
-        ->with(array('tutors'=>$tutors, 
-        'student'=>$student,
-        'totalStudents' => $totalStudents,
-         'totalUsers' =>$totalUsers,
-         'MaleOfStudents' =>$MaleOfStudents,
-         'FemaleOfStudents' =>$FemaleOfStudents,
-         'followUpList' =>$followUpList,
-         'archiveList'=>$archiveList
-        
-    ));
-    }
+   
 
     public function changePhotoTutor(){
         $auth = Auth::user();
